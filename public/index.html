@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Socket Basico</title>
+    <link rel="stylesheet" href="css/index.css"/>
+    <style>
+    body{
+      background-color: #242A43;
+      font-family: monospace;
+    }
+    h1{
+      color:#FFFB9F;
+      font-size: 200%;
+    }
+    .notificaciones{
+      color: #FFFB9F;
+      font-size: 150%;
+    }
+    .titulo1{
+      color: #FFFB9F;
+      font-size: 150%;
+      width: 70%;
+    }
+    .contenedorChat{
+      color: #d3d3d3;
+      font-size: 110%;
+    }
+    .notificaciones{
+      color: #d3d3d3;
+    }  
+    .avisos{
+      color: #d3d3d3;
+    }  
+    .carda {
+    width: 100%;
+    padding:1.9rem 1.2rem;
+    text-align: center;
+    background: #2B345A;
+    border-radius: 14px;
+    position: relative;
+    font-size: 80%;
+    }
+    .cardb {
+    width: 80%;
+    padding: 1.9rem 1.2rem;
+    text-align: center;
+    background: #2B345A;
+    border-radius: 14px;
+    }
+    .card {
+    width: 80%;
+    padding: 1.9rem 1.2rem;
+    text-align: center;
+    background: #2B345A;
+    border-radius: 14px;
+    }
+
+    /*Inputs*/
+    .field {
+    margin-top: .5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5em;
+    background-color: #312B5A ;
+    border-radius: 8px;
+    padding: .5em 1em;
+    }
+
+    .input-icon {
+    height: 1em;
+    width: 1em;
+    fill: #ffeba7;
+    }
+
+    .usuario{
+    background: none;
+    border: none;
+    outline: none;
+    width: 100%;
+    color: #d3d3d3;
+    }
+    .mensaje{
+    background: none;
+    border: none;
+    outline: none;
+    width: 100%;
+    color: #d3d3d3;
+    }   
+
+    /*Text*/
+    .title {
+    margin-bottom: 1rem;
+    font-size: 1.5em;
+    font-weight: 500;
+    color: #f5f5f5;
+    }
+
+    /*Buttons*/
+    .btn {
+    margin: 1rem;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: .8em;
+    text-transform: uppercase;
+    padding: 0.6em 1.2em;
+    background-color: #ffeba7;
+    color: #5e6681;
+    box-shadow: 0 8px 24px 0 rgb(255 235 167 / 20%);
+    transition: all .3s ease-in-out;
+    }
+
+    .btn-link {
+    color: #f5f5f5;
+    display: block;
+    font-size: .75em;
+    transition: color .3s ease-out;
+    }
+
+    /*Hover & focus*/
+    .field input:focus::placeholder {
+    opacity: 0;
+    transition: opacity .3s;
+    }
+
+    .btn:hover {
+    background-color: #5e6681;
+    color: #ffeba7;
+    box-shadow: 0 8px 24px 0 rgb(16 39 112 / 20%);
+    }
+
+    .btn-link:hover {
+    color: #ffeba7;
+    }
+
+  </style>
+  </head>
+  <body>
+    <table>
+      <tr>
+        <td><header class="header1">
+      <div class="titulo1">
+        <p>
+          Chats
+        </p>
+        <p>
+          Por: Gómez Santiago Eduardo
+        </p>
+        
+      </div><div class="titulo2"></div>      
+    </header>
+    </td>
+      </tr>
+      <tr>
+
+    <td>
+    <div class="carda"> 
+    <div class="contenedor1">
+      <h1 class="encabezado">Usuarios</h1>
+      <div id="notificaciones" class="notificaciones">
+      </div>
+    </div>
+  </div>
+
+  <br>
+  <br>
+  <br>
+  <br>
+
+    <div class="contenedor2"></div>
+      <div class="cardb">       
+          <h1 class="encabezado">Chat</h1>
+        <div class="contenedorChat" id="salida">
+        </div>     
+        <div class="avisos" id="avisos">
+        </div>
+      </div>
+    </td>
+    <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+      <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+  <td>
+      <div class="card">
+        <h4 class="title">Escribe un Mensaje</h4>       
+          <div class="field">
+            
+            <input type="text" class="usuario" id="usuario" placeholder="Usuario" required ><br><br>
+
+          </div>
+          <div class="field">
+            
+            <input type="text" class="mensaje" id="mensaje" placeholder="Mensaje" required><br><br>
+          
+          </div>
+          <button class="btn" id="enviar">Enviar</button>              
+      </div>           
+
+    </div>
+  </td>
+  </tr>
+  </table>
+    <script src="js/socket.io.js"></script>
+    <script src="js/logica.js" charset="utf-8"></script>
+  </body>
+</html>
